@@ -1,0 +1,16 @@
+.commentSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #205375;
+    width: auto;
+    padding: 0 20px;
+    height: auto;
+    color: #fff;
+    border-radius: 8px;
+    margin: 10px;
+    border: 2px solid rgb(28, 191, 255);
+    
+    font-size: 18px;
+}
