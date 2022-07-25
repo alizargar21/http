@@ -4,7 +4,7 @@ import NewComment from "./NewCommentes";
 import {getAllComments , postOneComment , setIsShow} from '../services/servicesFunctions.js';
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import Comments from "./Comments";
+import Comments from "./Comments/Comment/Comments";
 
 const Discussion = () => {
   const [comments, setComments] = useState(null);
