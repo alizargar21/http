@@ -1,8 +1,22 @@
 .footer{
     background-color: #ccc;
     width: 99vw;
-    height: 100px;
-    text-align: center;
+    min-height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
     position: absolute;
     bottom: 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+.footer ul li{
+    
+    margin: 20px;
+    
 }

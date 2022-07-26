@@ -7,11 +7,17 @@ import {
 } from "../services/servicesFunctions";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-const FullComment = ({ commentId , getComments,setComments, setSelectedId }) => {
+
+const FullComment = ({
+  match,
+history
+  
+}) => {
+  console.log(history)
+  const commentId = match.params.id
   const [comment, setComment] = useState(null);
   const [editComment, setEditComment] = useState(null);
   useEffect(() => {
-    
     if (commentId) {
       getOneComment(commentId)
         .then((res) => setComment(res.data))
@@ -33,19 +39,17 @@ const FullComment = ({ commentId , getComments,setComments, setSelectedId }) => 
   const editSubmit = async () => {
     await editOneComment(editComment.id, editComment);
     setComment(editComment);
-    await getComments()
+    
     setEditComment(null);
-    toast.success('Edit Comment Success')
+    toast.success("Edit Comment Success");
     console.log(editComment);
   };
   const deleteHandler = async () => {
     try {
       await deleteOneComment(commentId);
-      const { data } = await getAllComments();
-      setComments(data);
+      history.push('/')
       setComment(null);
-      setSelectedId(null);
-      toast.success('Delete Complete ')
+      toast.success("Delete Complete ");
     } catch (error) {
       toast.error("error delete Handler");
     }
@@ -56,12 +60,10 @@ const FullComment = ({ commentId , getComments,setComments, setSelectedId }) => 
   if (editComment)
     commentDetails = (
       <div className="containerEdit">
-        <div className="headerEdit">
-          
-        </div>
+        <div className="headerEdit"></div>
         <div className="editComment">
           <div className="marginTop">
-          <h4>Edit comment</h4>
+            <h4>Edit comment</h4>
             <label htmlFor="name">name </label>
             <input
               className="input"
@@ -79,7 +81,6 @@ const FullComment = ({ commentId , getComments,setComments, setSelectedId }) => 
               value={editComment.email}
               name="email"
               onChange={editHandler}
-              
             />
           </div>
           <div className="margin">
@@ -89,7 +90,6 @@ const FullComment = ({ commentId , getComments,setComments, setSelectedId }) => 
               value={editComment.content}
               name="content"
               onChange={editHandler}
-              
             />
           </div>
 

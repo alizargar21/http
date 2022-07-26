@@ -1,14 +1,14 @@
 .App {
   font-size: 20px;
-  width: 90vw;
-  min-height: 100vh;
+  width: 100vw;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   border: 1px solid black;
   background-color: #112B3C;
-  margin: 0 auto;
+  
   
 }
 
@@ -19,3 +19,31 @@ section {
   margin: 20px;
   flex-wrap: wrap;
 }
+
+.NavList{
+ 
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.NavList ul{
+  margin: 0 20px;
+ 
+}
+.NavList li{
+  font-weight: 500;
+  color: #444;
+  font-size: 25px;
+  margin: 0 20px;
+}
+
+.activeLink{
+  color: rgb(1, 44, 164);
+  text-shadow: 2px 2px 15px;
+  transition: all 0.5s;
+}
+
+.notFound{
+color: #ccc;
+}
+

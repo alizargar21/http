@@ -1,9 +1,9 @@
 import './comment.css'
-const Comments = ({name , email , onClick}) => {
+const Comment = ({name , email , onClick}) => {
     return ( <div className="commentSection" onClick={onClick}>
-        <p>name : {name}</p>
+        <p>Name : {name}</p>
         <p>Email: {email}</p>
     </div> );
 }
  
-export default Comments;
+export default Comment;

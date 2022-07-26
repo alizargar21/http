@@ -9,15 +9,14 @@ function App() {
   return (
     <div className="App">
       <Layout>
+      <ToastContainer />
         <Switch>
           {routes.map((route, index) => (
             <Route {...route} key={index} />
           ))}
         </Switch>
 
-        <Discussion />
-
-        <ToastContainer />
+        
       </Layout>
     </div>
   );

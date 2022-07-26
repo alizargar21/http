@@ -1,14 +1,15 @@
 import { NavLink, withRouter } from "react-router-dom";
-
-const item = [
-  { name: "home", to: "/", exact: true },
-
+import "./App.css";
+const items = [
+  { name: "Comments", to: "/", exact: true },
+  { name: "Comments Details", to: "/commentsDetails" },
+  { name: "Create Comment", to: "/createComment" },
 ];
 const Navigation = () => {
   return (
     <nav>
-      <ul>
-        {item.map((item) => {
+      <ul className="NavList">
+        {items.map((item) => {
           return (
             <li key={item.to}>
               <NavLink
