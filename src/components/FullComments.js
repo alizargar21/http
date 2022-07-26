@@ -8,13 +8,9 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const FullComment = ({
-  match,
-history
-  
-}) => {
-  console.log(history)
-  const commentId = match.params.id
+const FullComment = ({ match, history }) => {
+  console.log(history);
+  const commentId = match.params.id;
   const [comment, setComment] = useState(null);
   const [editComment, setEditComment] = useState(null);
   useEffect(() => {
@@ -39,7 +35,7 @@ history
   const editSubmit = async () => {
     await editOneComment(editComment.id, editComment);
     setComment(editComment);
-    
+
     setEditComment(null);
     toast.success("Edit Comment Success");
     console.log(editComment);
@@ -47,7 +43,7 @@ history
   const deleteHandler = async () => {
     try {
       await deleteOneComment(commentId);
-      history.push('/')
+      history.push("/");
       setComment(null);
       toast.success("Delete Complete ");
     } catch (error) {

@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 
 const Comments = () => {
   const [comments, setComments] = useState(null);
- 
+
   const [error, setError] = useState(false);
   const [isShow, setIsShow] = useState(false);
-  
+
   useEffect(() => {
     getComments();
   }, []);
@@ -29,9 +29,6 @@ const Comments = () => {
     }
   };
 
-
- 
-  
   const renderComments = () => {
     let renderValue = <p>Loading .....</p>;
     if (error) {
@@ -40,23 +37,14 @@ const Comments = () => {
     if (comments && !error) {
       renderValue = comments.map((c) => (
         <Link to={`/commentsDetails/${c.id}`} key={c.id}>
-          <Comment
-           
-            name={c.name}
-            email={c.email}
-            
-          />
+          <Comment name={c.name} email={c.email} />
         </Link>
       ));
     }
     return renderValue;
   };
 
-  return (
-    
-      <section>{renderComments()}</section>
-
-  );
+  return <section>{renderComments()}</section>;
 };
 
 export default Comments;

@@ -1,17 +1,15 @@
-.header{
-    width: 99vw;
-    background-color: #ccc;
-    height: 10vh;
-    color: #444;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row-reverse;
+.header {
+  width: 99vw;
+  background-color: #ccc;
+  height: 10vh;
+  color: #444;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
 }
 
-
 ul {
-    list-style: none;
-    font-size: 18px;
-   
+  list-style: none;
+  font-size: 18px;
 }
